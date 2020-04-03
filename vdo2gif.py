@@ -6,7 +6,7 @@ argparser = argparse.ArgumentParser()
 
 argparser.add_argument('inputdir',type=str, help='Input directory for video file')
 argparser.add_argument('outputdir',type=str,help='Output directory for gif file')
-argparser.add_argument('-c', '--cut', nargs=2, action='store', dest='time', metavar=('hr:min:sec','hr:min:sec'), help='the video will be trimmed within the given timeline and convert to gif when specify.(Format: 0:0:0)')
+argparser.add_argument('-t', nargs=2, action='store', dest='time', metavar=('0:0:0','0:0:0'), help='the video within the timeline will be converted gif when specify.(Format: hr:min:sec)')
 
 args = argparser.parse_args()
 
