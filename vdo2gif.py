@@ -12,6 +12,7 @@ args = argparser.parse_args()
 
 startTime = list()
 endTime = list()
+args.outputdir = args.outputdir.replace(".gif", "")
 banner = """
 created by -
      _   __                       ___  ___            _ _____ _           
