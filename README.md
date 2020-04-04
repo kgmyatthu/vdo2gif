@@ -1,5 +1,8 @@
 # What is this
   vdo2gif is a command line tool convert video file into gif. The tool is compitable with kali linux and should be same with other similar distro but not yet tested.
+### Features
+ - custom fps, speed, size.
+ 
 # Installation
   vdo2gif require ffmpeg package installed in your linux as well as python3.
   To install ffmpeg
@@ -24,6 +27,7 @@
  ```
  example:
  ![image1](https://github.com/kmt29/vdo2gif/blob/master/example/example1.gif)
+ 
  
  ### Converting only a part of the video file
   ```
