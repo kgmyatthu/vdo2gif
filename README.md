@@ -17,5 +17,18 @@
   Above command line Install the python required python modules to run the vdo2gif.py
   
  # Usage
+ ### Converting the whole video file
+ To convert the whole video file to gif
+ ```
+ usage: python3 vdo2gif.py /path/to/input.mp4 /path/to/output.gif 
+ ```
+ example:
+ ![image1](https://github.com/kmt29/vdo2gif/blob/master/example/example1.gif)
  
+ ### Converting only a part of the video file
+  ```
+ usage: python3 vdo2gif.py /path/to/input.mp4 /path/to/output.gif -t hr:min:sec hr:min:sec 
+ ```
+  example:
+ ![image1](https://github.com/kmt29/vdo2gif/blob/master/example/example2.gif)
   
