@@ -37,4 +37,4 @@
  ![image1](https://github.com/kmt29/vdo2gif/blob/master/example/example2.gif)
   
   # REMINDER TO MYSELF ::
-  (NEED-FIX) : The tool won't configure given fps, resize, playback speed settings when converting the whole video file.
+  -

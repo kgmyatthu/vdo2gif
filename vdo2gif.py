@@ -40,7 +40,7 @@ if args.time != None:
     clip = (VideoFileClip(args.inputdir).subclip((float(startTime[0]),float(startTime[1]),float(startTime[2])),(float(endTime[0]),float(endTime[1]),float(endTime[2]))).resize(args.resize).speedx(args.speed))
     
 if args.time == None:
-    clip = VideoFileClip(args.inputdir)
+    clip = VideoFileClip(args.inputdir).resize(args.resize).speedx(args.speed)
 
 print(banner)
 
