@@ -1,5 +1,5 @@
 # What is this
-  vdo2gif is a command line tool convert video file into gif. The tool is compitable with kali linux and should be same with other similar distro but not yet tested.
+  vdo2gif is a command line tool convert to video file into gif. The tool is compitable with kali linux and should be same with other similar distro but not yet tested.
 ### Features
  - custom fps, speed, size.
  
