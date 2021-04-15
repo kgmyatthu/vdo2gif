@@ -26,7 +26,7 @@
  usage: python3 vdo2gif.py /path/to/input.mp4 /path/to/output.gif 
  ```
  example:
- ![image1](https://github.com/kmt29/vdo2gif/blob/master/example/example1.gif)
+ ![image1](./example/example1.gif)
  
  
  ### Converting only a part of the video file
