@@ -26,6 +26,7 @@
  usage: python3 vdo2gif.py /path/to/input.mp4 /path/to/output.gif 
  ```
  example:
+ 
  ![image1](./example/example1.gif)
  
  
@@ -34,6 +35,7 @@
  usage: python3 vdo2gif.py /path/to/input.mp4 /path/to/output.gif -t hr:min:sec hr:min:sec 
  ```
   example:
+  
  ![image1](./example/example2.gif)
   
   # REMINDER TO MYSELF ::
