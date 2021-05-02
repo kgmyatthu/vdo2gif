@@ -26,16 +26,16 @@
  ```
  usage: python3 vdo2gif.py /path/to/input.mp4 /path/to/output.gif 
  ```
- example:
+This example convert the whole video file to gif.
  
  ![image1](./example/example1.gif)
  
  
- ### Converting only a part of the video file
+ ### Converting only a specific part of the video file
   ```
  usage: python3 vdo2gif.py /path/to/input.mp4 /path/to/output.gif -t hr:min:sec hr:min:sec 
  ```
-  example:
+  This example convert only the part between 5sec and 9sec of the video file to gif
   
  ![image1](./example/example2.gif)
   
