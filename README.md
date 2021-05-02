@@ -2,7 +2,7 @@
 ![pip moviepy](https://img.shields.io/badge/pip-moviepy-blue)
 
 # What is this
-  vdo2gif is a command line tool convert to video file into gif. I find myself opening video editing software just to do simple gif which i use to show example in my readme.md on github. The tool is compitable with any python3 compitable system. Tested on windows 10 and linux-debian x86 machines.
+  vdo2gif is a command line tool convert to video file into gif. I find myself opening video editing software just to do simple gif which i'd use to show examples in readme.md of my github repos. This tool is compitable with any python3 compitable system. Tested on windows 10 and linux-debian x86 machines.
 ### Features
  - custom fps, speed, size.
  
@@ -11,11 +11,14 @@
   ```
   root@kali:~# sudo apt-get install python3
   ```
-  After cloning this repo in your system, open terminal inside the repo directory and do
+  Install dependencies 
   ```
   root@kali:~# sudo python3 -m pip -r requirement.txt
   ```
-  Above command line Install the python required python modules to run the vdo2gif.py
+  Install pip if you see something like pip module not found.
+  ```
+    root@kali:~# sudo apt-get install python3-pip
+  ```
   
  # Usage
  ### Converting the whole video file
