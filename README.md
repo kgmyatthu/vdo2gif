@@ -35,7 +35,7 @@ This example convert the whole video file to gif.
   ```
  usage: python3 vdo2gif.py /path/to/input.mp4 /path/to/output.gif -t hr:min:sec hr:min:sec 
  ```
-  This example convert only the part between 5sec and 9sec of the video file to gif
+  This example convert only the part between 5sec and 9sec of the video file
   
  ![image1](./example/example2.gif)
   
