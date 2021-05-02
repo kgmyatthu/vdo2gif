@@ -1,3 +1,6 @@
+![python version](https://img.shields.io/badge/python-3.8-blue)
+![pip moviepy](https://img.shields.io/badge/pip-moviepy-blue)
+
 # What is this
   vdo2gif is a command line tool convert to video file into gif. The tool is compitable with kali linux and should be same with other similar distro but not yet tested.
 ### Features
