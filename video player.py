@@ -35,14 +35,14 @@ def ponerArgumento(texto,index,tipo):
 
         if tipo == "1":
 
-            if((int)(valor)>-1):
+            if(valor!="0"):
 
                 args+=" "+valor
 
             else:
 
-                args+=" 0"
-
+                args=""
+                
         elif tipo == "2":
 
             args+=" \""+valor+"\""
@@ -127,6 +127,18 @@ def limpiarCadena(cadena):
 
     return texto
 
+def enSegundos(tiempo):
+
+    minutos=tiempo[0:2]
+
+    segundos=tiempo[3:5]
+
+    segundos=(int)(segundos[0:1]+segundos[1:2])
+ 
+    minutos=(int)(minutos[0:1]+minutos[1:2])*60
+    
+    return minutos+segundos
+
 def calcularTiempo():
     
     global time1  
@@ -198,18 +210,24 @@ def convertir(Object):
         array=salida.split('=')
 
         if(len(array)==29):
-            
-            os.system("python vdo2gif.py \""+video+"\" \""+archivoSalida+"\" -t 00:"+time1+" 00:"+time2+" "+ponerArgumento("-f","7","1")+" "+ponerArgumento("-s","25","1")+" "+ponerArgumento("-r","27","1"))
 
             dato=""
-
-            if (int)(ponerArgumento("","3","1"))>0 and (int)(ponerArgumento("","1","1"))>0:
+         
+            if ponerArgumento("","3","1")!="" and ponerArgumento("","1","1")!="":
                 
-                os.remove(archivoSalida)
-
                 dato=ponerArgumento("-ss","1","1")+" "+ponerArgumento("-t","3","1")
 
+            else:
+
+                dato="-ss "+str(enSegundos(time1))+ " -t "+str(enSegundos(time2)-enSegundos(time1))   
+
             calidad=""
+
+            marcaDeAgua=""
+
+            if ponerArgumento("","11","4")!="":
+
+                marcaDeAgua=ponerArgumento("-watermark","11","2")+" "+ponerArgumento("-pos-watermark","13","1")+" "+ponerArgumento("--color-watermark","15","2")+" "+ponerArgumento("-text-watermark","17","2")+" "+ponerArgumento("-font-size-text-watermark","19","1")
 
             if ponerArgumento("-good","21","3")=="-good":
 
@@ -218,9 +236,25 @@ def convertir(Object):
             else:
 
                 calidad=ponerArgumento("-bad","23","3")
-            
-            os.system("java -jar jffmpeg.jar -i \""+video+"\" "+dato+" "+ponerArgumento("-r","5","1")+" "+ponerArgumento("-fps","7","1")+" "+ponerArgumento("-s","9","4")+" "+ponerArgumento("-watermark","11","2")+" "+ponerArgumento("-pos-watermark","13","1")+" "+ponerArgumento("--color-watermark","15","2")+" "+ponerArgumento("-text-watermark","17","2")+" "+ponerArgumento("-font-size-text-watermark","19","1")+" "+calidad)
+
+            comando="java -jar jffmpeg.jar -i \""+video+"\" "+dato+" "+ponerArgumento("-r","5","1")+" "+ponerArgumento("-fps","7","1")+" "+ponerArgumento("-s","9","4")+" "+marcaDeAgua+" "+calidad
+
+            os.system(comando.replace("  "," "))
     
+            comando="python vdo2gif.py \""+video+"\" \""+archivoSalida+"\" -t 00:"+time1+" 00:"+time2+" "+ponerArgumento("-f","7","1")+" "+ponerArgumento("-s","25","1")+" "+ponerArgumento("-r","27","1")
+            
+            os.system(comando.replace("  "," "))
+
+            os.remove(video[0:-4]+"-output"+video[video.rfind("."):len(video)])
+
+            if separador=="\\":
+
+                os.system("C:\\Windows\\explorer.exe " + "\"" + archivoSalida )
+
+            else:
+
+                os.system("xdg-open " + archivoSalida)
+
 def ontimer(e):
 
     if raiz.video.GetState() == 1 or raiz.video.GetState() == 2:

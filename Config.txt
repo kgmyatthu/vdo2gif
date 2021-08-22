@@ -1,0 +1,74 @@
+
+Time Start = 0 =
+
+Time Duration = 0 =
+
+Frame Rate = 0 =
+
+Frames Per Second = 2 =
+
+Set frame size (WxH or abbreviation) =  =
+
+watermark =  =
+
+Position watermark = 1 =
+
+Color watermark =  =
+
+Text watermark =  =
+
+Watermark text size = 0 =
+
+good = 0 =
+
+bad = 1 =
+
+Speed gif = 0 =
+
+Resize gif = 0 =
+
+-----------------------------------------------
+
+		VALUES
+
+-----------------------------------------------
+
+Time start = number od second
+
+Time duration = number od second
+
+Frame rate = number
+
+Set frame size = widthxheigt
+
+watermark = path of watermark
+
+Position watermark = number
+
+	0 -> UP - LEFT
+
+	1 -> UP - CENTER
+
+	2 -> UP - RIGHT
+
+	3 -> MIDDLE - LEFT
+
+	4 -> MIDDLE - CENTER
+
+	5 -> MIDDLE - RIGHT
+
+	6 -> DOWN - LEFT
+
+	7 -> DOWN - CENTER
+
+	8 -> DOWN - RIGHT
+
+Color watermark = number of color or color in HTML
+
+Text watermark = text
+
+Watermark text size = number
+
+good = number  (0 -> disable 1 -> enable)
+
+bad =  number  (0 -> disable 1 -> enable)
