@@ -236,16 +236,18 @@ def convertir(Object):
             else:
 
                 calidad=ponerArgumento("-bad","23","3")
-
+            
             comando="java -jar jffmpeg.jar -i \""+video+"\" "+dato+" "+ponerArgumento("-r","5","1")+" "+ponerArgumento("-fps","7","1")+" "+ponerArgumento("-s","9","4")+" "+marcaDeAgua+" "+calidad
 
             os.system(comando.replace("  "," "))
     
-            comando="python vdo2gif.py \""+video+"\" \""+archivoSalida+"\" -t 00:"+time1+" 00:"+time2+" "+ponerArgumento("-f","7","1")+" "+ponerArgumento("-s","25","1")+" "+ponerArgumento("-r","27","1")
+            videoSalida=video[0:-4]+"-output"+video[video.rfind("."):len(video)]
+         
+            comando="python vdo2gif.py \""+videoSalida+"\" \""+archivoSalida+"\" -t 00:"+time1+" 00:"+time2+" "+ponerArgumento("-f","7","1")+" "+ponerArgumento("-s","25","1")+" "+ponerArgumento("-r","27","1")
             
             os.system(comando.replace("  "," "))
 
-            os.remove(video[0:-4]+"-output"+video[video.rfind("."):len(video)])
+            os.remove(videoSalida)
 
             if separador=="\\":
 
