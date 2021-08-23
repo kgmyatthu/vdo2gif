@@ -21,7 +21,7 @@ import pathlib
 
 def verConfig(Object):
 
-    os.system("java -jar Config.jar");
+    os.system("java -jar "+os.path.join(os.path.dirname(__file__), "Config.jar"));
 
 def ponerArgumento(texto,index,tipo):
 
@@ -197,7 +197,7 @@ def convertir(Object):
 
         archivoSalida=video[0:video.rfind(separador)+1]+nombre_nuevo
       
-        proc=subprocess.Popen("java -jar ReadFile.jar -i "+str(pathlib.Path().absolute())+separador+"Config.txt -n 28",shell=True, stdout=subprocess.PIPE )
+        proc=subprocess.Popen("java -jar "+os.path.join(os.path.dirname(__file__), "ReadFile.jar")+" -i "+str(pathlib.Path().absolute())+separador+"Config.txt -n 28",shell=True, stdout=subprocess.PIPE )
     
         output=proc.communicate()[0]
     
@@ -241,14 +241,14 @@ def convertir(Object):
 
                 calidad=ponerArgumento("-bad","23","3")
             
-            comando="java -jar jffmpeg.jar -i \""+video+"\" "+dato+" "+ponerArgumento("-r","5","1")+" "+ponerArgumento("-fps","7","1")+" "+ponerArgumento("-s","9","4")+" "+marcaDeAgua+" "+calidad
+            comando="java -jar "+os.path.join(os.path.dirname(__file__), "jffmpeg.jar")+" -i \""+video+"\" "+dato+" "+ponerArgumento("-r","5","1")+" "+ponerArgumento("-fps","7","1")+" "+ponerArgumento("-s","9","4")+" "+marcaDeAgua+" "+calidad
 
             os.system(comando.replace("  "," "))
     
             videoSalida=video[0:-4]+"-output"+video[video.rfind("."):len(video)]
          
-            comando="python vdo2gif.py \""+videoSalida+"\" \""+archivoSalida+"\" -t 00:"+time1+" 00:"+time2+" "+ponerArgumento("-f","7","1")+" "+ponerArgumento("-s","25","1")+" "+ponerArgumento("-r","27","1")
-            
+            comando="python vdo2gif.py \""+videoSalida+"\" \""+archivoSalida+"\" "+ponerArgumento("-f","7","1")+" "+ponerArgumento("-s","25","1")+" "+ponerArgumento("-r","27","1")
+
             os.system(comando.replace("  "," "))
 
             os.remove(videoSalida)
