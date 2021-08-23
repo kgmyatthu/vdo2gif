@@ -247,8 +247,8 @@ def convertir(Object):
     
             videoSalida=video[0:-4]+"-output"+video[video.rfind("."):len(video)]
          
-            comando="python vdo2gif.py \""+videoSalida+"\" \""+archivoSalida+"\" "+ponerArgumento("-f","7","1")+" "+ponerArgumento("-s","25","1")+" "+ponerArgumento("-r","27","1")
-
+            comando="python "+os.path.join(os.path.dirname(__file__), "vdo2gif.py")+" \""+videoSalida+"\" \""+archivoSalida+"\" "+ponerArgumento("-f","7","1")+" "+ponerArgumento("-s","25","1")+" "+ponerArgumento("-r","27","1")
+                        
             os.system(comando.replace("  "," "))
 
             os.remove(videoSalida)
