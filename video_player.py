@@ -3,21 +3,13 @@ import os,wx, wx.media,sys
 
 import platform
 
-import json
-
-import urllib as urllib2
-
-import urllib.request
+from datetime import datetime
 
 from wx import *
-
-import logging
 
 import subprocess
 
 import pathlib
-
-
 
 def verConfig(Object):
 
@@ -180,23 +172,23 @@ def calcularTiempo():
     l3.SetLabel(time2);
 
 def convertir(Object):
-
-    api_url = "https://apiperiquito.herokuapp.com/recibo-json.php?imagenes="+file+".gif&mode=2";
-       
-    data = json.load(urllib2.request.urlopen(api_url))
-    
-    json_str = json.dumps(data)
-    
-    y = json.loads(json_str)
 	
-    nombre_nuevo=y["imagenes_bd"][0]
-    
+    now = datetime.now()
+
+    date_time = now.strftime("%m/%d/%Y-%H:%M:%S")
+
+    date_time=date_time.replace("/","-")
+
+    date_time=date_time.replace(":","_")
+
+    nombre_nuevo=date_time+".gif"
+
     if time1!="" and time2!="":
         
         global array
 
         archivoSalida=video[0:video.rfind(separador)+1]+nombre_nuevo
-      
+
         proc=subprocess.Popen("java -jar "+os.path.join(os.path.dirname(__file__), "ReadFile.jar")+" -i "+str(pathlib.Path().absolute())+separador+"Config.txt -n 28",shell=True, stdout=subprocess.PIPE )
     
         output=proc.communicate()[0]
