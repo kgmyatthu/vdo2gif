@@ -39,5 +39,8 @@ This example convert the whole video file to gif.
   
  ![image1](./example/example2.gif)
   
-  # REMINDER TO MYSELF ::
-  -
+### Picking Underlying program ( imageio / ffmpeg )
+Some system work better with on another , you can change the engine by doing - 
+```
+usage: python3 vdo2gif.py /path/to/input.mp4 /path/to/output.gif -e ffmpeg
+```
